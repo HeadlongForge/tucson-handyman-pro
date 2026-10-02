@@ -36,9 +36,9 @@ export function ContactSection() {
           <p className="text-sm text-primary-foreground/60 leading-relaxed mb-8">
             Describe what you need and we&apos;ll follow up within one business day to schedule a visit.
           </p>
-          <a href="tel:+15206009872" className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors">
+          <a href="tel:+15205059455" className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors">
             <Phone size={15} />
-            <span className="text-sm font-medium">(520) 600-9872</span>
+            <span className="text-sm font-medium">(520) 505-9455</span>
           </a>
         </div>
 

@@ -85,7 +85,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
         html: `
           <p>Hi ${first_name},</p>
           <p>Thanks for reaching out! We received your message and will follow up within one business day.</p>
-          <p>If you need to reach us sooner, give us a call at (520) 600-9872.</p>
+          <p>If you need to reach us sooner, give us a call at (520) 505-9455.</p>
           <br/>
           <p>— John<br/>Tucson Handyman Pro</p>
         `,

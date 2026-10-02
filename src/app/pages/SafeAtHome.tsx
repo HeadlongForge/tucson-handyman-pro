@@ -241,14 +241,14 @@ function CallToAction() {
         </div>
         <div className="flex flex-wrap items-center gap-4 flex-shrink-0">
           <a
-            href="tel:+15206009872"
+            href="tel:+15205059455"
             className="bg-accent text-accent-foreground px-7 py-3 text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
           >
             Call Today
           </a>
-          <a href="tel:+15206009872" className="flex items-center gap-2 text-primary-foreground/70 hover:text-accent transition-colors text-sm">
+          <a href="tel:+15205059455" className="flex items-center gap-2 text-primary-foreground/70 hover:text-accent transition-colors text-sm">
             <Phone size={14} />
-            (520) 600-9872
+            (520) 505-9455
           </a>
         </div>
       </div>

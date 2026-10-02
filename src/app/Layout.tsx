@@ -164,12 +164,12 @@ function MobileMenu() {
             </button>
 
             <a
-              href="tel:+15206009872"
+              href="tel:+15205059455"
               className="flex items-center gap-2 py-3 text-sm font-medium text-accent"
               onClick={() => setOpen(false)}
             >
               <Phone size={14} />
-              (520) 600-9872
+              (520) 505-9455
             </a>
           </nav>
         </div>
@@ -208,11 +208,11 @@ function Navbar() {
             Contact
           </a>
           <a
-            href="tel:+15206009872"
+            href="tel:+15205059455"
             className="flex items-center gap-1.5 text-sm font-medium text-foreground/80 hover:text-accent transition-colors duration-200"
           >
             <Phone size={13} />
-            (520) 600-9872
+            (520) 505-9455
           </a>
         </nav>
 

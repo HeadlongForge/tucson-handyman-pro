@@ -56,11 +56,11 @@ export default function HandymanSpecial() {
             </p>
           </div>
           <a
-            href="tel:+15206009872"
+            href="tel:+15205059455"
             className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-7 py-3 text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
           >
             <Phone size={14} />
-            Call (520) 600-9872
+            Call (520) 505-9455
           </a>
         </div>
       </section>
