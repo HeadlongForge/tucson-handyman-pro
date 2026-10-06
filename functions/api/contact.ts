@@ -81,11 +81,12 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
       body: JSON.stringify({
         from: "Tucson Handyman Pro <noreply@tucsonhandyman.pro>",
         to: [email],
+        reply_to: "thegypsy@headlongforge.com",
         subject: "We received your message — Tucson Handyman Pro",
         html: `
           <p>Hi ${first_name},</p>
           <p>Thanks for reaching out! We received your message and will follow up within one business day.</p>
-          <p>If you need to reach us sooner, give us a call at (520) 505-9455.</p>
+          <p>If you need to reach us sooner, just reply to this email.</p>
           <br/>
           <p>— John<br/>Tucson Handyman Pro</p>
         `,

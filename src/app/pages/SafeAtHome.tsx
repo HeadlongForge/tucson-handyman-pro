@@ -1,4 +1,4 @@
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router";
 import heroImage from "../../imports/Gates_THP_Header_Crop.jpg";
 import { ContactSection } from "./Home";
@@ -236,19 +236,15 @@ function CallToAction() {
         <div>
           <p className="text-[12px] tracking-[0.2em] uppercase font-semibold text-accent mb-2">Ready to get started?</p>
           <p className="text-xl text-primary-foreground font-medium" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Give us a call — we&apos;d love to talk through your needs.
+            Send us a message — we&apos;d love to talk through your needs.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-4 flex-shrink-0">
           <a
-            href="tel:+15205059455"
+            href="#contact"
             className="bg-accent text-accent-foreground px-7 py-3 text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
           >
-            Call Today
-          </a>
-          <a href="tel:+15205059455" className="flex items-center gap-2 text-primary-foreground/70 hover:text-accent transition-colors text-sm">
-            <Phone size={14} />
-            (520) 505-9455
+            Contact Us
           </a>
         </div>
       </div>

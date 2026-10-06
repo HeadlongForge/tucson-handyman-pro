@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { ArrowRight, Phone, Clock } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import heroImage from "../../imports/Gates_THP_Header_Crop.jpg";
 import { ContactSection } from "./Home";
 
@@ -52,15 +52,14 @@ export default function HandymanSpecial() {
               The Handyman Special is a bundled repair package designed to knock out your entire to-do list in a single, efficient visit. We&apos;re finalizing the details and will have this page ready shortly.
             </p>
             <p>
-              In the meantime, give us a call — we&apos;re happy to talk through what you need and get something scheduled.
+              In the meantime, send us a message below — we&apos;re happy to talk through what you need and get something scheduled.
             </p>
           </div>
           <a
-            href="tel:+15205059455"
+            href="#contact"
             className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-7 py-3 text-sm font-medium tracking-wide hover:opacity-90 transition-opacity"
           >
-            <Phone size={14} />
-            Call (520) 505-9455
+            Send us a message
           </a>
         </div>
       </section>

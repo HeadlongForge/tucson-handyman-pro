@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroImage from "../../imports/Gates_THP_Header_Crop.jpg";
 import { SERVICES } from "../Layout";
 
@@ -36,10 +36,6 @@ export function ContactSection() {
           <p className="text-sm text-primary-foreground/60 leading-relaxed mb-8">
             Describe what you need and we&apos;ll follow up within one business day to schedule a visit.
           </p>
-          <a href="tel:+15205059455" className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors">
-            <Phone size={15} />
-            <span className="text-sm font-medium">(520) 505-9455</span>
-          </a>
         </div>
 
         <div>
@@ -75,7 +71,7 @@ export function ContactSection() {
                 <textarea required name="message" rows={4} className="w-full bg-primary-foreground/5 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/30 px-4 py-2.5 text-sm focus:outline-none focus:border-accent transition-colors resize-none" placeholder="Tell us about your project..." />
               </div>
               {status === "error" && (
-                <p className="text-sm text-red-400">Something went wrong — please try again or call us directly.</p>
+                <p className="text-sm text-red-400">Something went wrong — please try again in a few minutes.</p>
               )}
               <button
                 type="submit"

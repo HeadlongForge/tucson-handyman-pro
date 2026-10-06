@@ -149,6 +149,7 @@ async function handlePaymentSucceeded(intent: StripePaymentIntent, env: Env) {
     sendEmail(env.RESEND_API_KEY, {
       from: env.FROM_EMAIL,
       to: customer_email,
+      reply_to: 'thegypsy@headlongforge.com',
       subject: 'Your Safe at Home Assessment is Confirmed',
       html: customerEmailHtml({ customer_name, dateLabel, slotLabel, address }),
     }),
@@ -280,7 +281,7 @@ async function verifyStripeSignature(payload: string, header: string, secret: st
 
 // ── Email helpers ─────────────────────────────────────────────────────────────
 
-async function sendEmail(apiKey: string, opts: { from: string; to: string; subject: string; html: string }) {
+async function sendEmail(apiKey: string, opts: { from: string; to: string; subject: string; html: string; reply_to?: string }) {
   return fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
@@ -300,7 +301,7 @@ function customerEmailHtml({ customer_name, dateLabel, slotLabel, address }: Rec
     <tr><td style="padding:8px;color:#666">Address</td><td style="padding:8px"><strong>${address}</strong></td></tr>
   </table>
   <p>Our technician will arrive during your window. You'll receive a call 30 minutes before arrival.</p>
-  <p>Questions? Reply to this email or call <a href="tel:+15205550100">(520) 555-0100</a>.</p>
+  <p>Questions? Just reply to this email.</p>
   <p style="margin-top:32px;color:#666;font-size:14px">— Tucson Handyman Pro</p>
 </div>`;
 }

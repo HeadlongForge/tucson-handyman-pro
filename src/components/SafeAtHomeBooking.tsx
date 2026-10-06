@@ -467,7 +467,7 @@ function Confirmation({ form, date, slot }: { form: BookingForm; date: string; s
         <div><span>Address</span><strong>{form.address}</strong></div>
       </div>
 
-      <p className="sah-hint">Our technician will call 30 minutes before arriving. Questions? Call <a href="tel:+15205550100">(520) 555-0100</a>.</p>
+      <p className="sah-hint">Our technician will call 30 minutes before arriving. Questions? Use the contact form at the bottom of this page.</p>
     </div>
   );
 }
