@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { ArrowRight } from "lucide-react";
 import heroImage from "../../imports/Gates_THP_Header_Crop.jpg";
 import { SERVICES } from "../Layout";
+import { DEMO_MODE } from "../demoMode";
 
 export function ContactSection() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -34,7 +35,9 @@ export function ContactSection() {
             Let&apos;s get your project started.
           </h2>
           <p className="text-sm text-primary-foreground/60 leading-relaxed mb-8">
-            Describe what you need and we&apos;ll follow up within one business day to schedule a visit.
+            {DEMO_MODE
+              ? "This is a demo site and Tucson Handyman Pro is no longer taking jobs. The form below is for testing, so no one will follow up on a message sent here."
+              : "Describe what you need and we'll follow up within one business day to schedule a visit."}
           </p>
         </div>
 
@@ -42,9 +45,11 @@ export function ContactSection() {
           {status === "sent" ? (
             <div className="h-full flex flex-col justify-center">
               <p className="text-2xl text-primary-foreground mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Message received.
+                {DEMO_MODE ? "Demo message received." : "Message received."}
               </p>
-              <p className="text-sm text-primary-foreground/60">We&apos;ll be in touch shortly.</p>
+              <p className="text-sm text-primary-foreground/60">
+                {DEMO_MODE ? "This is a demo site, so nobody will follow up on this message." : "We'll be in touch shortly."}
+              </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">

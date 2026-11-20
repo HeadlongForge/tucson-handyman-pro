@@ -14,6 +14,7 @@ import { useState, useEffect } from 'react';
 import SafeAtHomeBooking from './SafeAtHomeBooking';
 import './SafeAtHomeBooking.css';
 import './BookingModal.css';
+import { DEMO_MODE } from '../app/demoMode';
 
 const STRIPE_KEY = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY as string;
 
@@ -36,7 +37,7 @@ export default function BookingModal() {
   return (
     <>
       <button className="sah-trigger-btn" onClick={() => setOpen(true)}>
-        Schedule an Assessment
+        {DEMO_MODE ? 'Schedule an Assessment (Demo)' : 'Schedule an Assessment'}
       </button>
 
       {open && (
@@ -45,12 +46,24 @@ export default function BookingModal() {
             <div className="sah-modal-header">
               <div>
                 <h2>Safe at Home Assessment</h2>
-                <p>2.5-hour home safety evaluation · $99</p>
+                <p>{DEMO_MODE ? 'Demo of the booking flow' : '2.5-hour home safety evaluation · $99'}</p>
               </div>
               <button className="sah-modal-close" onClick={() => setOpen(false)} aria-label="Close">✕</button>
             </div>
             <div className="sah-modal-body">
-              <SafeAtHomeBooking stripePublishableKey={STRIPE_KEY} />
+              {DEMO_MODE ? (
+                <div style={{ padding: '24px 8px', lineHeight: 1.6 }}>
+                  <p style={{ fontWeight: 600, marginBottom: 8 }}>
+                    This is a demo. Tucson Handyman Pro is no longer taking jobs.
+                  </p>
+                  <p>
+                    No appointments are being scheduled and no payments are being collected on this site.
+                    The booking flow here shows what TradeKernel can do for a trades business.
+                  </p>
+                </div>
+              ) : (
+                <SafeAtHomeBooking stripePublishableKey={STRIPE_KEY} />
+              )}
             </div>
           </div>
         </div>
