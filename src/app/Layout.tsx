@@ -2,6 +2,25 @@ import { useState, useRef, useEffect } from "react";
 import { Outlet, Link, useNavigate, useLocation } from "react-router";
 import { ChevronDown, Search, Menu, X } from "lucide-react";
 import logoImg from "../imports/logo-transparent.png";
+import { DEMO_MODE, DEMO_BANNER_HEIGHT, TRADEKERNEL_URL } from "./demoMode";
+
+function DemoBanner() {
+  if (!DEMO_MODE) return null;
+  return (
+    <div
+      className="fixed top-0 left-0 right-0 z-50 bg-accent text-accent-foreground flex items-center justify-center gap-2 px-3 text-xs tracking-wide whitespace-nowrap overflow-hidden"
+      style={{ height: DEMO_BANNER_HEIGHT }}
+      role="note"
+    >
+      <span className="font-semibold">Demo site</span>
+      <span className="hidden sm:inline">&mdash; Tucson Handyman Pro is no longer taking jobs. This is a live demo of TradeKernel.</span>
+      <span className="sm:hidden">&mdash; not taking jobs.</span>
+      <a href={TRADEKERNEL_URL} className="underline underline-offset-2 font-medium">
+        About TradeKernel
+      </a>
+    </div>
+  );
+}
 
 export const SERVICES = [
   {
@@ -183,7 +202,10 @@ function Navbar() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 bg-card/95 backdrop-blur-sm border-b border-border">
+    <header
+      className="fixed left-0 right-0 z-40 bg-card/95 backdrop-blur-sm border-b border-border"
+      style={{ top: DEMO_MODE ? DEMO_BANNER_HEIGHT : 0 }}
+    >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-8">
         <Link to="/" className="flex-shrink-0 flex items-center">
           <img src={logoImg} alt="Tucson Handyman Pro" className="h-11 w-auto" />
@@ -237,7 +259,11 @@ export default function Layout() {
   }, [location]);
 
   return (
-    <div className="min-h-screen bg-background" style={{ fontFamily: "'Inter', sans-serif" }}>
+    <div
+      className="min-h-screen bg-background"
+      style={{ fontFamily: "'Inter', sans-serif", paddingTop: DEMO_MODE ? DEMO_BANNER_HEIGHT : 0 }}
+    >
+      <DemoBanner />
       <Navbar />
       <main>
         <Outlet />
